@@ -1,6 +1,10 @@
 /* Application styles */
 @import url('pico.min.css');
 
+html[aria-busy='true']::before {
+  display: none;
+}
+
 .nav-brand {
   margin-bottom: 0;
   margin-top: 0;
