@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: chirper_production
-  username: chirper
-  password: <%= ENV["CHIRPER_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
