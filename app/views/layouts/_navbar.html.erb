@@ -13,5 +13,13 @@
     <li>
       <%= link_to "Sign In", "", role: "button" %>
     </li>
+    <li>
+      <span data-controller="theme"
+            data-theme-target="toggler"
+            data-action="click->theme#toggleTheme"
+            class="theme-toggler">
+        🔅
+      </span>
+    </li>
   </ul>
 </nav>
