@@ -1,2 +1,7 @@
 /* Application styles */
 @import url('pico.min.css');
+
+.nav-brand {
+  margin-bottom: 0;
+  margin-top: 0;
+}
