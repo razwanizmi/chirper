@@ -1,0 +1,7 @@
+<%= content_tag(:h2, class: "settings-username") do %>
+  <span>
+    <%= image_tag(current_user.avatar_url, class: "settings-avatar") %>
+  </span>
+  <%= current_user.username %>
+<% end %>
+<%= button_to "Sign Out", session_path, method: :delete, class: "secondary" %>

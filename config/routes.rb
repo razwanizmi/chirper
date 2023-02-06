@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :users, only: [:create]
   get 'signup' => 'users#new'
+  get 'about' => 'pages#about'
+  get 'settings' => 'pages#settings'
 
   resource :session, only: %i[create destroy]
   get 'signin' => 'sessions#new'

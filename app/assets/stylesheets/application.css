@@ -52,6 +52,13 @@
   color: #7f1d1d;
 }
 
+.settings-avatar {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  margin-right: 0.5rem;
+}
+
 @keyframes fade-in-and-out {
   0%,
   100% {
