@@ -1,8 +1,19 @@
 /* Application styles */
 @import url('pico.min.css');
 
-html[aria-busy='true']::before {
-  display: none;
+[aria-busy='true']:not(input, select, textarea):not(:empty) {
+  position: relative;
+  opacity: 0.6;
+}
+
+[aria-busy='true']:not(input, select, textarea):not(:empty)::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+
+.main {
+  max-width: 500px;
 }
 
 .nav-brand {
@@ -12,4 +23,42 @@ html[aria-busy='true']::before {
 
 .theme-toggler {
   cursor: pointer;
+}
+
+.flashes {
+  position: relative;
+}
+
+.flash {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.flash.notice,
+.flash.success {
+  background-color: #bbf7d0;
+  color: #14532d;
+}
+
+.flash.alert,
+.flash.error {
+  background-color: #fca5a5;
+  color: #7f1d1d;
+}
+
+@keyframes fade-in-and-out {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  25%,
+  75% {
+    opacity: 1;
+  }
 }

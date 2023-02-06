@@ -12,7 +12,9 @@
 
   <body>
     <%= render partial: "layouts/navbar" %>
-    <main class="container">
+    <%= render "layouts/flash" %>
+
+    <main class="container main">
       <%= yield %>
     </main>
   </body>
