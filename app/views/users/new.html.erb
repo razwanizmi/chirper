@@ -1,2 +1,8 @@
-<h2>Sign Up</h2>
+<hgroup>
+  <h2>Sign Up</h2>
+  <h3>
+    Already have an account? <%= link_to "Sign in!", signin_path %>
+  </h3>
+</hgroup>
+
 <%= render "form", user: @user %>

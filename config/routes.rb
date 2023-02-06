@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   resources :users, only: [:create]
   get 'signup' => 'users#new'
 
+  resource :session, only: %i[create destroy]
+  get 'signin' => 'sessions#new'
+
   # Defines the root path route ("/")
   root 'chirps#index'
 end
