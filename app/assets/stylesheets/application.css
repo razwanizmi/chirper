@@ -1,6 +1,10 @@
 /* Application styles */
 @import url('pico.min.css');
 
+turbo-frame[aria-busy='true'] {
+  display: block;
+}
+
 [aria-busy='true']:not(input, select, textarea):not(:empty) {
   position: relative;
   opacity: 0.6;
@@ -71,6 +75,51 @@
   display: flex;
 }
 
+.chirp-form {
+  margin-bottom: 0;
+}
+
+.chirp-form textarea {
+  padding: 0;
+  width: 100%;
+  margin-bottom: -9px;
+}
+
+.chirp-contents {
+  width: 100%;
+}
+
+.chirp-actions {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 500px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.chirp-actions form {
+  all: unset;
+}
+
+.chirp-actions input,
+.chirp-actions button {
+  all: unset;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+.chirp-actions a {
+  margin-left: 0.5rem;
+}
+
+.chirp-actions a:hover,
+.chirp-actions input:hover,
+.chirp-actions button:hover {
+  text-decoration: none;
+  transform: translateY(-0.25rem);
+}
+
 .profile {
   width: 40px;
   height: 40px;
@@ -95,6 +144,10 @@
 
 .message {
   line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.message textarea {
   margin-bottom: 0;
 }
 

@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resource :session, only: %i[create destroy]
   get 'signin' => 'sessions#new'
 
+  resources :chirps, except: :index
+
   # Defines the root path route ("/")
   root 'chirps#index'
 end

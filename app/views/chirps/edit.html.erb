@@ -1,0 +1,21 @@
+<%= turbo_frame_tag @chirp do %>
+  <article class="card">
+    <%= form_with(model: @chirp, class: "chirp-form") do |f| %>
+      <div class="chirp-box">
+        <div class="profile">
+          <%= image_tag @chirp.user.avatar_url, class: "avatar" %>
+        </div>
+        <div class="chirp-contents">
+          <div class="username">
+            @<%= @chirp.user.username %>
+          </div>
+          <%= f.text_area :content, rows: 2, class: "message" %>
+        </div>
+      </div>
+      <div class="chirp-actions">
+        <%= link_to "❌", chirp_path(@chirp) %>
+        <%= f.submit "✅" %>
+      </div>
+    <% end %>
+  </article>
+<% end %>

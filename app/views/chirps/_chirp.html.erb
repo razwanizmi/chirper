@@ -1,15 +1,28 @@
-<article class="card">
-  <div class="chirp-box">
-    <div class="profile">
-      <%= image_tag chirp.user.avatar_url, class: "avatar" %>
-    </div>
-    <div class="chirp-contents">
-      <div class="username">
-        @<%= chirp.user.username %>
+<%= turbo_frame_tag chirp do %>
+  <article class="card">
+    <div class="chirp-box">
+      <div class="profile">
+        <%= image_tag chirp.user.avatar_url, class: "avatar" %>
       </div>
-      <div class="message">
-        <%= chirp.content %>
+      <div class="chirp-contents">
+        <div class="username">
+          @<%= chirp.user.username %>
+        </div>
+        <div class="message">
+          <%= chirp.content %>
+        </div>
       </div>
     </div>
-  </div>
-</article>
+    <% if current_user == chirp.user %>
+      <div class="chirp-actions">
+        <%= link_to "✏️", edit_chirp_path(chirp) %>
+        <%= button_to "🗑",
+                      chirp_path(chirp),
+                      method: :delete,
+                      data: {
+                        turbo_confirm: "Are you sure?"
+                      }%>
+      </div>
+    <% end %>
+  </article>
+<% end %>
