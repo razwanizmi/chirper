@@ -1,0 +1,15 @@
+<article class="card">
+  <div class="chirp-box">
+    <div class="profile">
+      <%= image_tag chirp.user.avatar_url %>
+    </div>
+    <div class="chirp-contents">
+      <div class="username">
+        @<%= chirp.user.username %>
+      </div>
+      <div class="message">
+        <%= chirp.content %>
+      </div>
+    </div>
+  </div>
+</article>

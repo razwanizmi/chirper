@@ -10,16 +10,19 @@ MOVIES_GENERATOR = [
 ].freeze
 
 20.times do
-  movie = MOVIES_GENERATOR.sample
-
   user = User.create!(
-    username: movie.character.gsub(/[^a-zA-Z]/, ''),
+    username: MOVIES_GENERATOR.sample.character.gsub(/[^a-zA-Z]/, ''),
     password: 'rootroot'
   )
-
-  20.times do
-    user.chirps.create!(content: MOVIES_GENERATOR.sample.quote)
-  end
 rescue StandardError
   retry
+end
+
+users = User.all
+
+400.times do
+  Chirp.create!(
+    user: users.sample,
+    content: MOVIES_GENERATOR.sample.quote
+  )
 end
