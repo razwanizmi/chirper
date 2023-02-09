@@ -85,6 +85,15 @@ turbo-frame[aria-busy='true'] {
   margin-bottom: -9px;
 }
 
+.chirp-form textarea[aria-invalid='true'] {
+  padding-left: 0 !important;
+}
+
+.chirp-form small {
+  margin-top: 9px;
+  margin-bottom: 0;
+}
+
 .chirp-contents {
   width: 100%;
 }

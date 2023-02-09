@@ -24,10 +24,7 @@ class ChirpsController < ApplicationController
   end
 
   def destroy
-    puts 'Destroying chirp...'
-    puts @chirp.content
     @chirp.destroy
-    redirect_to root_path
   end
 
   private

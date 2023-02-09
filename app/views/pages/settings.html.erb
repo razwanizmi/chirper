@@ -1,6 +1,8 @@
 <%= content_tag(:h2, class: "settings-username") do %>
   <span>
-    <%= image_tag(current_user.avatar_url, class: "settings-avatar") %>
+    <%= image_tag(current_user.avatar_url,
+                  class: "settings-avatar",
+                  alt: "#{current_user.username} avatar") %>
   </span>
   <%= current_user.username %>
 <% end %>

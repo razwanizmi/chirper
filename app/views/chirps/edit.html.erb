@@ -3,7 +3,9 @@
     <%= form_with(model: @chirp, class: "chirp-form") do |f| %>
       <div class="chirp-box">
         <div class="profile">
-          <%= image_tag @chirp.user.avatar_url, class: "avatar" %>
+          <%= image_tag @chirp.user.avatar_url,
+                        class: "avatar",
+                        alt: "#{@chirp.user.username} avatar" %>
         </div>
         <div class="chirp-contents">
           <div class="username">
