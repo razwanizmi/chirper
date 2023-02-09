@@ -2,6 +2,9 @@
 
 class ChirpsController < ApplicationController
   def index
-    @chirps = Chirp.all.limit(50)
+    @pagy, @chirps = pagy(
+      Chirp.order(created_at: :desc).includes(:user),
+      items: 5
+    )
   end
 end

@@ -80,7 +80,8 @@
   margin-right: 20px;
 }
 
-.profile img {
+.profile .avatar {
+  font-size: 40px;
   width: 40px;
   height: 40px;
   border-radius: 9999px;
