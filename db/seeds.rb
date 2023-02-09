@@ -9,11 +9,17 @@ MOVIES_GENERATOR = [
   Faker::Movies::StarWars
 ].freeze
 
-50.times do
-  User.create!(
-    username: MOVIES_GENERATOR.sample.character.gsub(/[^a-zA-Z]/, ''),
+20.times do
+  movie = MOVIES_GENERATOR.sample
+
+  user = User.create!(
+    username: movie.character.gsub(/[^a-zA-Z]/, ''),
     password: 'rootroot'
   )
+
+  20.times do
+    user.chirps.create!(content: MOVIES_GENERATOR.sample.quote)
+  end
 rescue StandardError
   retry
 end
