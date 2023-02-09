@@ -3,6 +3,16 @@ import {Controller} from '@hotwired/stimulus'
 export default class extends Controller {
   static targets = ['toggler']
 
+  initialize() {
+    const theme = window.localStorage.getItem('theme')
+
+    if (theme === 'dark') {
+      this.toggleDark()
+    } else {
+      this.toggleLight()
+    }
+  }
+
   click() {
     if (this.currentTheme() === 'dark') {
       this.toggleLight()
@@ -30,11 +40,13 @@ export default class extends Controller {
   toggleLight() {
     document.documentElement.setAttribute('data-theme', 'light')
     this.renderLightIcon()
+    window.localStorage.setItem('theme', 'light')
   }
 
   toggleDark() {
     document.documentElement.setAttribute('data-theme', 'dark')
     this.renderDarkIcon()
+    window.localStorage.setItem('theme', 'dark')
   }
 
   renderLightIcon() {
