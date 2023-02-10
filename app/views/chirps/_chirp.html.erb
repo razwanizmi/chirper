@@ -2,9 +2,9 @@
   <article class="card">
     <div class="chirp-box">
       <div class="profile">
-        <%= image_tag chirp.user.avatar_url, 
-                      class: "avatar",
-                      alt: "#{chirp.user.username} avatar" %>
+        <%= image_tag chirp.user.avatar_url,
+              class: "avatar",
+              alt: "#{chirp.user.username} avatar" %>
       </div>
       <div class="chirp-contents">
         <div class="username">
@@ -19,11 +19,11 @@
       <div class="chirp-actions">
         <%= link_to "✏️", edit_chirp_path(chirp) %>
         <%= button_to "🗑",
-                      chirp_path(chirp),
-                      method: :delete,
-                      data: {
-                        turbo_confirm: "Are you sure?"
-                      } %>
+              chirp_path(chirp),
+              method: :delete,
+              data: {
+                turbo_confirm: "Are you sure?",
+              } %>
       </div>
     <% end %>
   </article>

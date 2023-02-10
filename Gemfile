@@ -57,6 +57,8 @@ gem "faker"
 gem "pagy"
 
 # Linters
+gem "better_html"
+gem "erb_lint", require: false
 gem "rubocop", require: false
 gem "rubocop-shopify", require: false
 
