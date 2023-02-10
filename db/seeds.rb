@@ -6,13 +6,13 @@
 MOVIES_GENERATOR = [
   Faker::Movies::HarryPotter,
   Faker::Movies::LordOfTheRings,
-  Faker::Movies::StarWars
+  Faker::Movies::StarWars,
 ].freeze
 
 20.times do
   user = User.create!(
-    username: MOVIES_GENERATOR.sample.character.gsub(/[^a-zA-Z]/, ''),
-    password: 'rootroot'
+    username: MOVIES_GENERATOR.sample.character.gsub(/[^a-zA-Z]/, ""),
+    password: "rootroot",
   )
 rescue StandardError
   retry
@@ -23,6 +23,6 @@ users = User.all
 400.times do
   Chirp.create!(
     user: users.sample,
-    content: MOVIES_GENERATOR.sample.quote
+    content: MOVIES_GENERATOR.sample.quote,
   )
 end

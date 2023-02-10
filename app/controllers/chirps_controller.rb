@@ -2,14 +2,14 @@
 
 class ChirpsController < ApplicationController
   before_action :require_signin, except: :index
-  before_action :set_chirp, only: %i[show edit update destroy]
+  before_action :set_chirp, only: [:show, :edit, :update, :destroy]
 
   def show; end
 
   def index
     @pagy, @chirps = pagy(
       Chirp.order(created_at: :desc).includes(:user),
-      items: 5
+      items: 5,
     )
     return unless signed_in?
 
@@ -23,15 +23,15 @@ class ChirpsController < ApplicationController
 
     if @chirp.save
     else
-      render partial: 'new_chirp', locals: { new_chirp: @chirp }, status: :unprocessable_entity
+      render(partial: "new_chirp", locals: { new_chirp: @chirp }, status: :unprocessable_entity)
     end
   end
 
   def update
     if @chirp.update(chirp_params)
-      render :show
+      render(:show)
     else
-      render :edit, status: :unprocessable_entity
+      render(:edit, status: :unprocessable_entity)
     end
   end
 

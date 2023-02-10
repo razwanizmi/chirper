@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
     return if signed_in?
 
     session[:intended_url] = request.url
-    redirect_to signin_url
+    redirect_to(signin_url)
   end
 
   def current_user

@@ -10,10 +10,10 @@ class UsersController < ApplicationController
 
     if @user.save
       session[:user_id] = @user.id
-      flash[:success] = 'Successfully signed up!'
-      redirect_to root_path
+      flash[:success] = "Successfully signed up!"
+      redirect_to(root_path)
     else
-      render :new, status: :unprocessable_entity
+      render(:new, status: :unprocessable_entity)
     end
   end
 

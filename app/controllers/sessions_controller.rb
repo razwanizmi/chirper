@@ -8,18 +8,18 @@ class SessionsController < ApplicationController
 
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      flash[:notice] = 'Successfully signed in'
-      redirect_to session[:intended_url] || root_path
+      flash[:notice] = "Successfully signed in"
+      redirect_to(session[:intended_url] || root_path)
       session[:intended_url] = nil
     else
-      flash.now[:alert] = 'Invalid email/password combination'
-      render :new, status: :unprocessable_entity
+      flash.now[:alert] = "Invalid email/password combination"
+      render(:new, status: :unprocessable_entity)
     end
   end
 
   def destroy
-    flash[:notice] = 'Successfully signed out'
+    flash[:notice] = "Successfully signed out"
     session[:user_id] = nil
-    redirect_to root_url
+    redirect_to(root_url)
   end
 end
