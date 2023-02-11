@@ -4,13 +4,13 @@
 /* Loading styles */
 
 [aria-busy='true']:not(input, select, textarea):not(:empty) {
-  position: relative;
   opacity: 0.6;
+  position: relative;
 }
 
 [aria-busy='true']:not(input, select, textarea):not(:empty)::before {
-  position: absolute;
   left: 50%;
+  position: absolute;
   top: 50%;
 }
 
@@ -22,12 +22,12 @@ turbo-frame[aria-busy='true'] {
   max-width: 600px;
 }
 
-.nav-brand {
+.navbar__brand {
   margin-bottom: 0;
   margin-top: 0;
 }
 
-.theme-toggler {
+.navbar__theme {
   cursor: pointer;
 }
 
