@@ -1,5 +1,12 @@
 <%= form_with(model: chirp) do |f| %>
-  <%= f.label(:content, "🐦 Share your thoughts with the world") %>
-  <%= f.text_area(:content, placeholder: "I feel...", required: true) %>
+  <%= f.label(:content, class: "new-chirp__label") do %>
+    <%= image_tag(
+          current_user.avatar_url,
+          class: "avatar avatar--new-chirp",
+          alt: "#{current_user.username} avatar",
+        ) %>
+    <span>Share your thoughts with the world</span>
+  <% end %>
+  <%= f.text_area(:content, placeholder: "I think...", required: true) %>
   <%= f.submit("Chirp") %>
 <% end %>
