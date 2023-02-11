@@ -1,3 +1,4 @@
+glob: '**/*.{html,turbo_stream}{+*,}.erb'
 EnableDefaultLinters: true
 linters:
   ErbSafety:
