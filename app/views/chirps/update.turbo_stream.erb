@@ -1,0 +1,7 @@
+<%= turbo_stream.replace(
+      @chirp,
+      partial: "chirp",
+      locals: { chirp: @chirp },
+    ) %>
+
+<%= render_flash_stream %>

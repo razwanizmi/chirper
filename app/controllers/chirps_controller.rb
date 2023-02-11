@@ -21,7 +21,8 @@ class ChirpsController < ApplicationController
     @chirp = current_user.chirps.new(chirp_params)
 
     if @chirp.save
-      # TODO: Build the create stream and render it
+      @new_chirp = current_user.chirps.new
+      flash.now[:notice] = "You just chirped"
     else
       render(:new, status: :unprocessable_entity)
     end
@@ -29,8 +30,7 @@ class ChirpsController < ApplicationController
 
   def update
     if @chirp.update(chirp_params)
-      # TODO: Build the update stream and render it
-      render(:show)
+      flash.now[:notice] = "Successfully updated a chirp"
     else
       render(:edit, status: :unprocessable_entity)
     end
@@ -38,6 +38,7 @@ class ChirpsController < ApplicationController
 
   def destroy
     @chirp.destroy
+    flash.now[:notice] = "Successfully removed a chirp"
   end
 
   private

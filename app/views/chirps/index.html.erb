@@ -4,16 +4,18 @@
   <% end %>
 <% end %>
 
-<%= turbo_frame_tag "chirps_page_#{@pagy.page}" do %>
-  <%= render collection: @chirps, partial: "chirp" %>
+<div id="chirps">
+  <%= turbo_frame_tag "chirps_page_#{@pagy.page}" do %>
+    <%= render collection: @chirps, partial: "chirp" %>
 
-  <% if @pagy.next %>
-    <%= turbo_frame_tag "chirps_page_#{@pagy.next}",
-          src: root_path(page: @pagy.next),
-          loading: :lazy do %>
-      <% 5.times do %>
-        <%= render partial: "loading" %>
+    <% if @pagy.next %>
+      <%= turbo_frame_tag "chirps_page_#{@pagy.next}",
+            src: root_path(page: @pagy.next),
+            loading: :lazy do %>
+        <% 5.times do %>
+          <%= render partial: "loading" %>
+        <% end %>
       <% end %>
     <% end %>
   <% end %>
-<% end %>
+</div>
