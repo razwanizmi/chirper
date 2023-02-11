@@ -94,6 +94,10 @@ turbo-frame[aria-busy='true'] {
   display: flex;
 }
 
+.chirp__content {
+  flex: 1;
+}
+
 .chirp__username {
   font-size: 0.9rem;
   margin-bottom: 5px;
@@ -120,36 +124,32 @@ turbo-frame[aria-busy='true'] {
 .chirp__actions input {
   all: unset;
   cursor: pointer;
-  margin-left: 0.5rem;
+  margin-left: 10px;
 }
 
 .chirp__actions a:hover,
 .chirp__actions button:hover,
 .chirp__actions input:hover {
   text-decoration: none;
-  transform: translateY(-0.25rem);
+  transform: translateY(-5px);
 }
 
-.chirp-form {
+.chirp__edit {
   margin-bottom: 0;
 }
 
-.chirp-form textarea {
+.chirp__edit textarea {
+  margin-bottom: -0.5rem;
   padding: 0;
   width: 100%;
-  margin-bottom: -9px;
 }
 
-.chirp-form textarea[aria-invalid='true'] {
+.chirp__edit textarea[aria-invalid='true'] {
   padding-left: 0 !important;
 }
 
-.chirp-form small {
+.chirp__edit small {
   margin-top: 9px;
-  margin-bottom: 0;
-}
-
-.message textarea {
   margin-bottom: 0;
 }
 

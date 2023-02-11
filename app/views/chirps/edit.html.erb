@@ -1,5 +1,7 @@
 <%= turbo_frame_tag @chirp do %>
-  <article class="card">
-    <%= render partial: "edit_form", locals: { chirp: @chirp } %>
+  <article class="card card--chirp">
+    <div class="chirp">
+      <%= render partial: "edit_form", locals: { chirp: @chirp } %>
+    </div>
   </article>
 <% end %>

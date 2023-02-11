@@ -1,18 +1,18 @@
-<%= form_with(model: chirp, class: "chirp-form") do |f| %>
-  <div class="chirp-box">
-    <div class="profile">
-      <%= image_tag chirp.user.avatar_url,
-            class: "avatar",
-            alt: "#{chirp.user.username} avatar" %>
-    </div>
-    <div class="chirp-contents">
-      <div class="username">
+<%= form_with(model: chirp, class: "chirp__edit") do |f| %>
+  <div class="chirp__details">
+    <%= image_tag chirp.user.avatar_url,
+          class: "avatar avatar--chirp",
+          alt: "#{chirp.user.username} avatar" %>
+    <div class="chirp__content">
+      <div class="chirp__username">
         @<%= chirp.user.username %>
       </div>
-      <%= f.text_area(:content, rows: 2, class: "message") %>
+      <div class="chirp__message">
+        <%= f.text_area(:content, rows: 2, required: true) %>
+      </div>
     </div>
   </div>
-  <div class="chirp-actions">
+  <div class="chirp__actions">
     <%= link_to "❌", chirp_path(@chirp) %>
     <%= f.submit("✅") %>
   </div>
