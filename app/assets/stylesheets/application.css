@@ -1,9 +1,7 @@
 /* Application styles */
 @import url('pico.min.css');
 
-turbo-frame[aria-busy='true'] {
-  display: block;
-}
+/* Loading styles */
 
 [aria-busy='true']:not(input, select, textarea):not(:empty) {
   position: relative;
@@ -16,7 +14,11 @@ turbo-frame[aria-busy='true'] {
   top: 50%;
 }
 
-.main {
+turbo-frame[aria-busy='true'] {
+  display: block;
+}
+
+.container--main {
   max-width: 600px;
 }
 
