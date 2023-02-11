@@ -1,0 +1,15 @@
+<%= turbo_stream.prepend(
+      "chirps",
+      partial: "timeline/chirp",
+      locals: { chirp: chirp },
+    ) %>
+
+<%= turbo_stream.update(
+      "flash",
+      partial: "layouts/flash",
+      locals: {
+        flash: {
+          notice: "@#{chirp.user.username} just chirped",
+        },
+      },
+    ) %>
