@@ -21,7 +21,7 @@ turbo-frame[aria-busy='true'] {
 /* Navbar */
 
 .container--main {
-  max-width: 600px;
+  max-width: 500px;
 }
 
 .navbar__brand {
@@ -40,14 +40,14 @@ turbo-frame[aria-busy='true'] {
 }
 
 .flashes__flash {
-  position: absolute;
-  top: 0;
-  right: 0;
-  text-align: center;
+  padding-bottom: 0.25rem;
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
 }
 
 .flashes__flash--notice,
@@ -62,24 +62,72 @@ turbo-frame[aria-busy='true'] {
   color: #7f1d1d;
 }
 
-.settings-avatar {
-  width: 1.75rem;
-  height: 1.75rem;
+/* Avatar */
+
+.avatar {
   border-radius: 9999px;
+  height: 40px;
+  width: 40px;
+}
+
+.avatar--settings {
   margin-right: 0.5rem;
 }
 
-.card {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+/* Chirp */
+
+.avatar--chirp {
+  margin-right: 20px;
+}
+
+.card--chirp {
+  margin-bottom: 16px;
+  margin-top: 16px;
   padding: 10px;
 }
 
-.chirp-box {
+.chirp {
   padding: 30px;
-  max-width: 500px;
-  margin-left: 0px;
+}
+
+.chirp__details {
   display: flex;
+}
+
+.chirp__username {
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  opacity: 0.7;
+}
+
+.chirp__message {
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.chirp__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.chirp__actions form {
+  all: unset;
+}
+
+.chirp__actions a,
+.chirp__actions button,
+.chirp__actions input {
+  all: unset;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.chirp__actions a:hover,
+.chirp__actions button:hover,
+.chirp__actions input:hover {
+  text-decoration: none;
+  transform: translateY(-0.25rem);
 }
 
 .chirp-form {
@@ -98,68 +146,6 @@ turbo-frame[aria-busy='true'] {
 
 .chirp-form small {
   margin-top: 9px;
-  margin-bottom: 0;
-}
-
-.chirp-contents {
-  width: 100%;
-}
-
-.chirp-actions {
-  display: flex;
-  justify-content: flex-end;
-  max-width: 500px;
-  padding-bottom: 30px;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-.chirp-actions form {
-  all: unset;
-}
-
-.chirp-actions input,
-.chirp-actions button {
-  all: unset;
-  margin-left: 0.5rem;
-  cursor: pointer;
-}
-
-.chirp-actions a {
-  margin-left: 0.5rem;
-}
-
-.chirp-actions a:hover,
-.chirp-actions input:hover,
-.chirp-actions button:hover {
-  text-decoration: none;
-  transform: translateY(-0.25rem);
-}
-
-.profile {
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  min-height: 40px;
-  border-radius: 40px;
-  margin-right: 20px;
-}
-
-.profile .avatar {
-  font-size: 40px;
-  width: 40px;
-  height: 40px;
-  border-radius: 9999px;
-}
-
-.username {
-  opacity: 0.7;
-  margin-bottom: 5px;
-  font-size: 0.9rem;
-}
-
-.message {
-  line-height: 1.5;
   margin-bottom: 0;
 }
 
