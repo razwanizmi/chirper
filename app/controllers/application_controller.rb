@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   def require_signin
     return if signed_in?
 
+    flash[:alert] = "You need to be signed in for that"
     session[:intended_url] = request.url
     redirect_to(signin_url)
   end

@@ -70,15 +70,15 @@ turbo-frame[aria-busy='true'] {
   width: 40px;
 }
 
-.avatar--settings {
-  margin-right: 0.5rem;
+.avatar--profile {
+  margin-right: 20px;
 }
-
-/* Chirp */
 
 .avatar--chirp {
   margin-right: 20px;
 }
+
+/* Chirp */
 
 .card--chirp {
   margin-bottom: 16px;
@@ -151,6 +151,12 @@ turbo-frame[aria-busy='true'] {
 .chirp__edit small {
   margin-top: 9px;
   margin-bottom: 0;
+}
+
+/* Profile */
+
+.profile {
+  display: flex;
 }
 
 @keyframes fade-in-and-out {
