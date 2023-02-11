@@ -1,5 +1,5 @@
 <% if @new_chirp %>
-  <%= render partial: "new", locals: { new_chirp: @new_chirp } %>
+  <%= render partial: "new_form", locals: { chirp: @new_chirp } %>
 <% end %>
 
 <%= turbo_frame_tag "chirps_page_#{@pagy.page}" do %>

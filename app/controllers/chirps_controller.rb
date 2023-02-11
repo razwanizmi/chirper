@@ -11,9 +11,8 @@ class ChirpsController < ApplicationController
       Chirp.order(created_at: :desc).includes(:user),
       items: 5,
     )
-    return unless signed_in?
 
-    @new_chirp = current_user.chirps.new
+    @new_chirp = current_user&.chirps&.new
   end
 
   def edit; end
@@ -22,13 +21,16 @@ class ChirpsController < ApplicationController
     @chirp = current_user.chirps.new(chirp_params)
 
     if @chirp.save
+      # TODO: Build the create stream and render it
     else
+      # TODO: render(:new, status: :unprocessable_entity)
       render(partial: "new_chirp", locals: { new_chirp: @chirp }, status: :unprocessable_entity)
     end
   end
 
   def update
     if @chirp.update(chirp_params)
+      # TODO: Build the update stream and render it
       render(:show)
     else
       render(:edit, status: :unprocessable_entity)
