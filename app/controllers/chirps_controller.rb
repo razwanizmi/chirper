@@ -23,8 +23,7 @@ class ChirpsController < ApplicationController
     if @chirp.save
       # TODO: Build the create stream and render it
     else
-      # TODO: render(:new, status: :unprocessable_entity)
-      render(partial: "new_chirp", locals: { new_chirp: @chirp }, status: :unprocessable_entity)
+      render(:new, status: :unprocessable_entity)
     end
   end
 
