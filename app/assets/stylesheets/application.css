@@ -18,6 +18,8 @@ turbo-frame[aria-busy='true'] {
   display: block;
 }
 
+/* Navbar */
+
 .container--main {
   max-width: 600px;
 }
@@ -31,11 +33,13 @@ turbo-frame[aria-busy='true'] {
   cursor: pointer;
 }
 
+/* Flashes */
+
 .flashes {
   position: relative;
 }
 
-.flash {
+.flashes__flash {
   position: absolute;
   top: 0;
   right: 0;
@@ -46,14 +50,14 @@ turbo-frame[aria-busy='true'] {
   padding-bottom: 0.25rem;
 }
 
-.flash.notice,
-.flash.success {
+.flashes__flash--notice,
+.flashes__flash--success {
   background-color: #bbf7d0;
   color: #14532d;
 }
 
-.flash.alert,
-.flash.error {
+.flashes__flash--alert,
+.flashes__flash--error {
   background-color: #fca5a5;
   color: #7f1d1d;
 }
