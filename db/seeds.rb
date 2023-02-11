@@ -10,7 +10,7 @@ MOVIES_GENERATOR = [
 ].freeze
 
 20.times do
-  user = User.create!(
+  User.create!(
     username: MOVIES_GENERATOR.sample.character.gsub(/[^a-zA-Z]/, ""),
     password: "rootroot",
   )
