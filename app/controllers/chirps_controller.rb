@@ -1,10 +1,12 @@
 # frozen_string_literal: true
 
 class ChirpsController < ApplicationController
-  before_action :require_signin, except: :index
-  before_action :set_chirp, only: [:show, :edit, :update, :destroy]
+  before_action :require_signin, except: [:index, :show]
+  before_action :set_chirp, only: [:edit, :update, :destroy]
 
-  def show; end
+  def show
+    @chirp = Chirp.find(params[:id])
+  end
 
   def index
     @pagy, @chirps = pagy(

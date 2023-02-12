@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Chirp < ApplicationRecord
+  include ActionView::RecordIdentifier
+
   belongs_to :user
 
   validates :content,
@@ -12,6 +14,21 @@ class Chirp < ApplicationRecord
       "timeline",
       partial: "timeline/create",
       locals: { chirp: self },
+    )
+  end)
+
+  after_update_commit(lambda do
+    broadcast_render_later_to(
+      "timeline",
+      partial: "timeline/update",
+      locals: { chirp: self },
+    )
+  end)
+
+  after_destroy_commit(lambda do
+    broadcast_remove_to(
+      "timeline",
+      target: dom_id(self),
     )
   end)
 end
