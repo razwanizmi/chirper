@@ -21,22 +21,9 @@ services:
 
   - type: redis
     name: chirper-redis
+    plan: free
     maxmemoryPolicy: noeviction
     ipAllowList: []
-
-  - type: worker
-    name: chirper-sidekiq
-    env: ruby
-    buildCommand: bundle install
-    startCommand: bundle exec sidekiq
-    envVars:
-      - key: REDIS_URL
-        fromService:
-          type: redis
-          name: sidekiq-redis
-          property: connectionString
-      - key: RAILS_MASTER_KEY
-        sync: false
 
 databases:
   - name: chirper-db
