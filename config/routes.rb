@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get "signup" => "users#new"
   get "about" => "pages#about"
   get "profile" => "pages#profile"
+  get "reset" => "pages#reset"
 
   resource :session, only: [:create, :destroy]
   get "signin" => "sessions#new"
