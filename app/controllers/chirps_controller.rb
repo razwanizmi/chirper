@@ -17,14 +17,17 @@ class ChirpsController < ApplicationController
     @new_chirp = current_user&.chirps&.new
   end
 
+  def new
+    @chirp = current_user.chirps.new
+  end
+
   def edit; end
 
   def create
     @chirp = current_user.chirps.new(chirp_params)
 
     if @chirp.save
-      @new_chirp = current_user.chirps.new
-      flash.now[:notice] = "You just chirped"
+      redirect_to(new_chirp_path)
     else
       render(:new, status: :unprocessable_entity)
     end
