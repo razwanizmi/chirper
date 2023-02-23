@@ -1,15 +1,11 @@
 import {Controller} from '@hotwired/stimulus'
 
 export default class extends Controller {
-  static targets = ['toggler']
+  static targets = ['document', 'toggler']
 
   initialize() {
-    const theme = window.localStorage.getItem('theme')
-
-    if (theme === 'dark') {
-      this.toggleDark()
-    } else {
-      this.toggleLight()
+    if (this.savedTheme() !== this.currentTheme()) {
+      this.initTheme()
     }
   }
 
@@ -38,13 +34,13 @@ export default class extends Controller {
   }
 
   toggleLight() {
-    document.documentElement.setAttribute('data-theme', 'light')
+    this.documentTarget.setAttribute('data-theme', 'light')
     this.renderLightIcon()
     window.localStorage.setItem('theme', 'light')
   }
 
   toggleDark() {
-    document.documentElement.setAttribute('data-theme', 'dark')
+    this.documentTarget.setAttribute('data-theme', 'dark')
     this.renderDarkIcon()
     window.localStorage.setItem('theme', 'dark')
   }
@@ -58,6 +54,18 @@ export default class extends Controller {
   }
 
   currentTheme() {
-    return document.documentElement.getAttribute('data-theme')
+    return this.documentTarget.getAttribute('data-theme')
+  }
+
+  savedTheme() {
+    return window.localStorage.getItem('theme')
+  }
+
+  initTheme() {
+    if (this.savedTheme() === 'dark') {
+      this.toggleDark()
+    } else {
+      this.toggleLight()
+    }
   }
 }
