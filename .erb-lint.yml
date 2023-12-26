@@ -1,4 +1,4 @@
-glob: '**/*.{html,turbo_stream}{+*,}.erb'
+glob: "**/*.{html,turbo_stream}{+*,}.erb"
 EnableDefaultLinters: true
 linters:
   ErbSafety:
@@ -8,6 +8,10 @@ linters:
     rubocop_config:
       inherit_from:
         - .rubocop.yml
+      Layout/ArgumentAlignment:
+        Enabled: false
+      Layout/FirstArgumentIndentation:
+        Enabled: false
       Layout/InitialIndentation:
         Enabled: false
       Layout/LineLength:
